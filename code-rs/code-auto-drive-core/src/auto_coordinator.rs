@@ -1877,7 +1877,7 @@ fn build_schema(active_agents: &[String], features: SchemaFeatures) -> Value {
         "input_required".to_string(),
         json!({
             "type": "boolean",
-            "description": "Set true only when the CLI must pause for mandatory user input (credentials, permissions, missing info). When true, Auto Drive will wait indefinitely for the user response instead of auto-continuing."
+            "description": "Set true only if you are blocked and cannot proceed without specific user-provided data that you cannot derive yourself (e.g., credentials, missing permissions). If you can continue without it, keep this false. When true, Auto Drive will wait indefinitely for the user response instead of auto-continuing. Also set input_required to true if you are repeatedly waiting for user input in a loop; stop and require the input instead of continuing."
         }),
     );
 
